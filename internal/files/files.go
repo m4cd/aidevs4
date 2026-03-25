@@ -1,10 +1,13 @@
 package files
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
+
+	"github.com/gocarina/gocsv"
 )
 
 func DownloadFile(path string, filename string, url string) (err error) {
@@ -49,4 +52,42 @@ func ReadFileToString(filename string) string {
 	}
 
 	return string(b)
+}
+
+// Unmarshalls CSV stored in a file in FilePath to an array
+func UnmarshalCSV[T any](FilePath string) ([]*T, error) {
+
+	csvFile, csvFileError := os.OpenFile(FilePath, os.O_RDWR, os.ModePerm)
+
+	if csvFileError != nil {
+		return nil, fmt.Errorf("failed to open CSV file: %w", csvFileError)
+	}
+
+	defer csvFile.Close()
+
+	var result []*T
+
+	if unmarshalError := gocsv.UnmarshalFile(csvFile, &result); unmarshalError != nil {
+		return nil, fmt.Errorf("failed to open CSV file: %w", unmarshalError)
+	}
+
+	return result, nil
+}
+
+// Unmarshalls JSON stored in a file in FilePath
+func UnmarshalJSON[T any](FilePath string) (*T, error) {
+	jsonFile, jsonFileError := os.ReadFile(FilePath)
+
+	if jsonFileError != nil {
+		return nil, fmt.Errorf("failed to open CSV file: %w", jsonFileError)
+	}
+
+	var result *T
+
+	unmarshalError := json.Unmarshal(jsonFile, &result)
+	if unmarshalError != nil {
+		return nil, fmt.Errorf("failed to open JSON file: %w", unmarshalError)
+	}
+
+	return result, nil
 }

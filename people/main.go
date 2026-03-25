@@ -9,6 +9,7 @@ import (
 	"github.com/m4cd/aidevs4/internal/answer"
 	"github.com/m4cd/aidevs4/internal/dates"
 	"github.com/m4cd/aidevs4/internal/files"
+	"github.com/m4cd/aidevs4/internal/types"
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/option"
 
@@ -53,14 +54,16 @@ func main() {
 
 	defer csvFile.Close()
 
-	var people []*Person
+	var people []*types.Person
 
 	if unmarshalError := gocsv.UnmarshalFile(csvFile, &people); unmarshalError != nil {
 		fmt.Println("CSV unmarshalling error.")
 		return
 	}
 
-	var filteredPeople []*Person
+	// people, err = files.UnmarshalCSV(Data)
+
+	var filteredPeople []*types.Person
 
 	for _, person := range people {
 		personsAge, err := dates.CalculateAgeColonYYYYMMDD(person.BirthDate)
@@ -140,13 +143,13 @@ Odpowiedź zwróć w formacie JSON w polu "answer":
 		return
 	}
 
-	var result PeopleListJSON
+	var result types.PeopleListJSON
 	if err := json.Unmarshal([]byte(choice.Message.Content), &result); err != nil {
 		fmt.Println("Unmarshalling error.")
 		return
 	}
 
-	ans := AnswerType{
+	ans := types.AnswerS01E01{
 		Task:   "people",
 		ApiKey: ApiKey,
 	}

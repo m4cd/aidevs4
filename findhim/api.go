@@ -21,7 +21,7 @@ func LocationApiCall(key string, url string, name string, surname string) []coor
 	suspectPost.Surname = surname
 	suspectPost.ApiKey = key
 
-	CandidatesLocations, err := answer.SendPostJson(url, key, &suspectPost)
+	CandidatesLocations, err := answer.SendPostJson(url, &suspectPost)
 	if err != nil {
 		fmt.Println("Error sending candidate to location api.")
 		return nil
@@ -35,8 +35,8 @@ func LocationApiCall(key string, url string, name string, surname string) []coor
 }
 
 type AccessLevelApiCallInput struct {
-	Name    string `json:"name"`
-	Surname string `json:"surname"`
+	Name      string `json:"name"`
+	Surname   string `json:"surname"`
 	Birthdate string `json:"birthdate"`
 }
 
@@ -53,7 +53,7 @@ func AccessLevelApiCall(key string, url string, name string, surname string, bir
 		return types.AccessLevelResponse{}
 	}
 
-	AccesslevelResponseString, err := answer.SendPostJson(url, key, &Accesslevel)
+	AccesslevelResponseString, err := answer.SendPostJson(url, &Accesslevel)
 	if err != nil {
 		fmt.Println("Error sending candidate to accesslevel api.")
 		return types.AccessLevelResponse{}

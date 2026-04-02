@@ -47,8 +47,7 @@ func SendAnswer(answer any, URL string) []byte {
 	return bodyAnswerBytes
 }
 
-// func UnmarshalCSV[T any](FilePath string) ([]*T, error)
-func SendPostJson[T any](endpoint string, apikey string, payload *T) (string, error) {
+func SendPostJson[T any](endpoint string, payload *T) (string, error) {
 	httpClient := http.Client{}
 
 	jsonBytes, err := json.Marshal(payload)

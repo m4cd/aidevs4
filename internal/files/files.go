@@ -47,7 +47,7 @@ func DownloadFile(path string, filename string, url string) (err error) {
 func ReadFileToString(filename string) string {
 	b, err := os.ReadFile(filename)
 	if err != nil {
-		fmt.Print(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 

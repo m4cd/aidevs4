@@ -14,7 +14,7 @@ Finding a package. Function Calling. MCP (optional - not implemended).
 ### S01E04 - sendit
 Multimodality. 
 
-## S01E05 - railway
+### S01E05 - railway
 Managing model limits - API limitls and errors. Function Calling. 
 
 ### S02E01 - categorize

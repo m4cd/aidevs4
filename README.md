@@ -18,3 +18,7 @@ Multimodality.
 Managing model limits - API limitls and errors. Function Calling. 
 
 ### S02E01 - categorize
+Gererating clasification prompts for external LLM model limited by input size (100 tokens)
+
+### S02E02 - electricity
+Image processing. No LLM API used. Exercise solved with help of AI writing image processing code.

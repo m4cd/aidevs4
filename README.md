@@ -22,3 +22,6 @@ Gererating clasification prompts for external LLM model limited by input size (1
 
 ### S02E02 - electricity
 Image processing. No LLM API used. Exercise solved with help of AI writing image processing code.
+
+### S02E03 - failure
+Log compresion. But again without AI agent implementation.

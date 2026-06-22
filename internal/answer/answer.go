@@ -2,6 +2,7 @@ package answer
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -116,4 +117,21 @@ func SendPostJson[T any](endpoint string, payload *T) (string, error) {
 
 	return string(bodyAnswerBytes), nil
 
+}
+
+func PrintResponse(Response http.Response) (string, error) {
+	body, err := io.ReadAll(Response.Body)
+	if err != nil {
+		fmt.Printf("Error reading body: %v\n", err)
+		return "", err
+	}
+	b, _ := json.Marshal(body)
+	result := string(b)
+
+	var rawBase64 string
+	json.Unmarshal(b, &rawBase64)
+	resultBytes, _ := base64.StdEncoding.DecodeString(rawBase64)
+	result = string(resultBytes)
+	fmt.Printf("[+] Response: %s\n", result)
+	return result ,nil
 }

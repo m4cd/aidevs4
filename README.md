@@ -25,3 +25,6 @@ Image processing. No LLM API used. Exercise solved with help of AI writing image
 
 ### S02E03 - failure
 Log compresion. But again without AI agent implementation.
+
+### S02E04 - mailbox
+Function calling. Searching emails through its API.

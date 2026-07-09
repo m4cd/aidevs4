@@ -125,28 +125,28 @@ var tools = []openai.ChatCompletionToolParam{
 		},
 	},
 	{
-	Type: "function",
-	Function: openai.FunctionDefinitionParam{
-		Name:        "verify",
-		Description: openai.String("To be called when the flag is found. Report the recovered password, date, and confirmation code."),
-		Parameters: openai.FunctionParameters{
-			"type": "object",
-			"properties": map[string]interface{}{
-				"password": map[string]interface{}{
-					"type":        "string",
-					"description": "The recovered password.",
+		Type: "function",
+		Function: openai.FunctionDefinitionParam{
+			Name:        "verify",
+			Description: openai.String("To be called when the flag is found. Report the recovered password, date, and confirmation code."),
+			Parameters: openai.FunctionParameters{
+				"type": "object",
+				"properties": map[string]interface{}{
+					"password": map[string]interface{}{
+						"type":        "string",
+						"description": "The recovered password.",
+					},
+					"date": map[string]interface{}{
+						"type":        "string",
+						"description": "The recovered date.",
+					},
+					"confirmation_code": map[string]interface{}{
+						"type":        "string",
+						"description": "The recovered confirmation code.",
+					},
 				},
-				"date": map[string]interface{}{
-					"type":        "string",
-					"description": "The recovered date.",
-				},
-				"confirmation_code": map[string]interface{}{
-					"type":        "string",
-					"description": "The recovered confirmation code.",
-				},
+				"required": []string{"password", "date", "confirmation_code"},
 			},
-			"required": []string{"password", "date", "confirmation_code"},
 		},
 	},
-},
 }

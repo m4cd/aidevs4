@@ -41,6 +41,7 @@ func main() {
 	var response http.Response
 
 	systemPrompt := files.ReadFileToString(Task + "/" + "prompt.md")
+
 	messages = append(messages, openai.SystemMessage(systemPrompt))
 
 	for {
@@ -70,6 +71,7 @@ func main() {
 
 		for _, toolCall := range choice.Message.ToolCalls {
 			fmt.Println("[+] Function " + toolCall.Function.Name + " chosen...")
+			fmt.Println(choice.Message.Content)
 
 			switch toolCall.Function.Name {
 			case "help":
@@ -160,7 +162,7 @@ func main() {
 				return
 			}
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(5 * time.Second)
 	}
 
 }

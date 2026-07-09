@@ -28,3 +28,6 @@ Log compresion. But again without AI agent implementation.
 
 ### S02E04 - mailbox
 Function calling. Searching emails through its API.
+
+### S02E05 - drone
+Function calling... Again. Image analysis based on URL.

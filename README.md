@@ -31,3 +31,5 @@ Function calling. Searching emails through its API.
 
 ### S02E05 - drone
 Function calling... Again. Image analysis based on URL.
+
+### S03E01 - evaluation

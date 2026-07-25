@@ -33,3 +33,9 @@ Function calling. Searching emails through its API.
 Function calling... Again. Image analysis based on URL.
 
 ### S03E01 - evaluation
+Cost optimalization with programatic evaluation of data correctness.
+
+### S03E02 - firmware
+No LLM used at all. Exercise solved without coding at all.
+
+### S03E03 - reactor

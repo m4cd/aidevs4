@@ -16,7 +16,7 @@ Multimodality.
 
 ### S01E05 - railway
 Managing model limits - API limitls and errors. Function Calling. 
-
+---
 ### S02E01 - categorize
 Gererating clasification prompts for external LLM model limited by input size (100 tokens)
 
@@ -31,7 +31,7 @@ Function calling. Searching emails through its API.
 
 ### S02E05 - drone
 Function calling... Again. Image analysis based on URL.
-
+---
 ### S03E01 - evaluation
 Cost optimalization with programatic evaluation of data correctness.
 
@@ -39,3 +39,6 @@ Cost optimalization with programatic evaluation of data correctness.
 No LLM used at all. Exercise solved without coding at all.
 
 ### S03E03 - reactor
+No LLM used at all. Exercise solved without coding at all. Why would I involve LLM?
+
+### S03E04 - negotiations

@@ -46,3 +46,4 @@ No LLM used at all. Exercise solved without coding at all.
 No LLM used at all. Exercise solved without coding at all. Why would I involve LLM?
 
 ### S03E04 - negotiations
+Tools implemented for an agent available in the cloud to search within local CSV files.

@@ -47,3 +47,10 @@ No LLM used at all. Exercise solved without coding at all. Why would I involve L
 
 ### S03E04 - negotiations
 Tools implemented for an agent available in the cloud to search within local CSV files.
+
+### S03E05 - savethem
+Another exercise where LLM is redundant. Solved without coding at all. Why would I involve LLM?
+
+---
+
+### S04E01 - 

@@ -53,4 +53,7 @@ Another exercise where LLM is redundant. Solved without coding at all. Why would
 
 ---
 
-### S04E01 - 
+### S04E01 - okoeditor
+No LLM used at all. Exercise solved without coding at all.
+
+### S04E02 - windpower
